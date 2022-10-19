@@ -1835,9 +1835,11 @@ class PlayState extends MusicBeatState
 
 			deaths += 1;
 
-			openSubState(new GameOverSubstate(boyfriend.getScreenPosition().x, boyfriend.getScreenPosition().y));
+			//openSubState(new GameOverSubstate(boyfriend.getScreenPosition().x, boyfriend.getScreenPosition().y));
 
-			FlxG.sound.play(Paths.sound(GameOverSubstate.deathSound));
+			//FlxG.sound.play(Paths.sound(GameOverSubstate.deathSound));
+            //Coiso pra n ter gameover @Minhapica
+			Main.switchState(this, new LockState());
 
 			#if DISCORD_RPC
 			Discord.changePresence("Game Over - " + songDetails, detailsSub, null, null, iconRPC);
@@ -1949,6 +1951,14 @@ class PlayState extends MusicBeatState
 
 		Conductor.stopMusic();
 		deaths = 0;
+        //Lock game shits @NxtVithor
+		FlxG.stage.application.window.onClose.add(function()
+		{
+			if (FlxG.save.data.closed == null)
+				FlxG.save.data.closed = -1;
+			FlxG.save.data.closed = ++FlxG.save.data.closed;
+			FlxG.save.flush();
+		});
 
 		// set ranking
 		rank = Timings.returnScoreRating().toUpperCase();
@@ -1963,6 +1973,12 @@ class PlayState extends MusicBeatState
 
 		// CoolUtil.difficulties = CoolUtil.baseDifficulties;
 
+		if (FlxG.save.data.closed > -1)
+			{
+				Sys.exit(0);
+				return;
+			}
+
 		if (chartingMode)
 		{
 			// enable memory cleaning
@@ -1975,7 +1991,7 @@ class PlayState extends MusicBeatState
 			{
 				// enable memory cleaning
 				clearStored = true;
-				Main.switchState(this, new FreeplayMenuState());
+				Main.switchState(this, new LockState());
 			}
 			else if (!skipCutscenes())
 				songEndCutscene();

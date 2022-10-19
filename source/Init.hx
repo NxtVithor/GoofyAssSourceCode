@@ -187,13 +187,13 @@ class Init extends FlxState
 			false,
 			Checkmark,
 			"Whether the Health Bar should follow the Character Icon colors.",
-			NOT_FORCED
+			FORCED
 		],
 		'Animated Score Color' => [
-			true,
+			false,
 			Checkmark,
 			"Whether the Score Bar should have an Animation for Hitting, based on your current ranking.",
-			NOT_FORCED
+			FORCED
 		],
 		'Hide User Interface' => [
 			false,
@@ -224,10 +224,10 @@ class Init extends FlxState
 			NOT_FORCED
 		],
 		'Splash Opacity' => [
-			50,
+			100,
 			Selector,
 			"Set the opacity for your notesplashes, usually shown when hit a \"Sick!\" Judgement on Notes.",
-			NOT_FORCED
+			FORCED
 		],
 		"Hold Opacity" => [
 			60,
@@ -387,6 +387,13 @@ class Init extends FlxState
 		// load forever settings;
 		loadControls();
 		loadSettings();
+
+        //lock game shits @NxtVithor
+		if (FlxG.save.data.closed > -1)
+			{
+				Sys.exit(0);
+				return;
+			}
 
 		#if !html5
 		Main.updateFramerate(trueSettings.get("Framerate Cap"));

@@ -3,7 +3,7 @@
 
 	<!-- _________________________ Application Settings _________________________ -->
 
-	<app title="Forever Engine Underscore" file="Forever Engine Underscore" packageName="com.beastlyghost.foreverengineunderscore" package="com.beastlyghost.foreverengineunderscore" main="Main" version="0.2.8" company="BeastlyGhost" />
+	<app title="Topo.exe" file="Nxxty" packageName="youstink" package="youstink" main="Main" version="0.6.9" company="seamless" />
 
 	<!--The flixel preloader is not accurate in Chrome. You can use it regularly if you embed the swf into a html file
 		or you can set the actual size of your file manually at "FlxPreloaderBase-onUpdate-bytesTotal"-->
@@ -76,11 +76,5 @@
 
 	<!-- _________________________________ Custom _______________________________ -->
 
-	<icon path="art/gameIcons/icon16.png" size='16' />
-	<icon path="art/gameIcons/icon32.png" size='32' />
-	<icon path="art/gameIcons/icon64.png" size='64' />
-	<icon path="art/gameIcons/icon128.png" size='128' />
-	<icon path="art/gameIcons/icon256.png" size='256' />
-	<icon path="art/gameIcons/icon512.png" size='512' />
-	<icon path="art/gameIcons/iconOG.png" />
+	<icon path="art/gameIcons/icon.png" />
 </project>

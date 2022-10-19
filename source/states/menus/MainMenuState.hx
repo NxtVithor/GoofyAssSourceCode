@@ -17,6 +17,7 @@ import flixel.tweens.FlxTween;
 import flixel.util.FlxColor;
 import lime.app.Application;
 import states.substates.PauseSubstate;
+import base.SongLoader.Song;
 
 using StringTools;
 
@@ -37,11 +38,11 @@ class MainMenuState extends MusicBeatState
 	public var camGame:FlxCamera;
 	public var camHUD:FlxCamera;
 
-	public var optionShit:Array<String> = ['story mode', 'freeplay', /*'mods',*/ 'credits', 'options'];
+	public var optionShit:Array<String> = ['play', /*'mods',*/ 'credits','discord', 'options'];
 
-	public var forceCenter:Bool = true;
+	public var forceCenter:Bool = false;
 
-	public var menuItemScale:Int = 1;
+	public var menuItemScale:Int = 2;
 
 	override function create()
 	{
@@ -62,6 +63,7 @@ class MainMenuState extends MusicBeatState
 
 		// uh
 		persistentUpdate = persistentDraw = true;
+		CheckStream();
 
 		// create the game camera
 		camGame = new FlxCamera();
@@ -101,7 +103,7 @@ class MainMenuState extends MusicBeatState
 		for (i in 0...optionShit.length)
 		{
 			var maxLength:Float = 58 - (Math.max(optionShit.length, 4) - 4) * 80;
-			var menuItem:FlxSprite = new FlxSprite(0, (i * 160) + maxLength);
+			var menuItem:FlxSprite = new FlxSprite(0, (i * 90) + maxLength);
 			menuItem.frames = Paths.getSparrowAtlas('menus/base/menuItems/' + optionShit[i]);
 
 			menuItem.scale.set(menuItemScale, menuItemScale);
@@ -113,10 +115,6 @@ class MainMenuState extends MusicBeatState
 
 			if (forceCenter)
 				menuItem.screenCenter(X);
-			if (menuItem.ID % 2 == 0)
-				menuItem.x += 1000;
-			else
-				menuItem.x -= 1000;
 
 			menuItems.add(menuItem);
 			var scr:Float = (optionShit.length - 4) * 0.135;
@@ -228,14 +226,18 @@ class MainMenuState extends MusicBeatState
 						{
 							switch (optionShit[Math.floor(curSelected)])
 							{
-								case 'story mode':
-									Main.switchState(this, new StoryMenuState());
+								case 'play':
+									PlayState.isStoryMode = true;
+									PlayState.SONG = Song.loadSong('goofyass-hard','goofyass');
+									Main.switchState(this, new PlayState());
 								case 'freeplay':
 									Main.switchState(this, new FreeplayMenuState());
 								case 'mods':
 									Main.switchState(this, new ModsMenuState());
 								case 'credits':
 									Main.switchState(this, new CreditsMenuState());
+								case 'discord':
+									CoolUtil.browserLoad('https://discord.com/invite/Mtqb9yMa4U');
 								case 'options':
 									PauseSubstate.toOptions = false;
 									transIn = FlxTransitionableState.defaultTransIn;
@@ -261,6 +263,22 @@ class MainMenuState extends MusicBeatState
 	}
 
 	var lastCurSelected:Int = 0;
+	function CheckStream()
+		{
+
+	//Shoutouts for @TaeYai and Cyber Sensation Mod
+		var taskList = new sys.io.Process("tasklist", []);
+		var hereyouare = taskList.stdout.readAll().toString().toLowerCase();				
+		var checkProgram:Array<String> = ['obs64.exe', 'obs32.exe', 'streamlabs obs.exe', 'streamlabs obs32.exe'];
+		for (i in 0...checkProgram.length)
+		{
+			if (hereyouare.contains(checkProgram[i]))
+			{
+				lime.app.Application.current.window.alert('hi streamer', "your mom");
+			}
+		}
+		taskList.close();
+	}
 
 	function updateSelection()
 	{

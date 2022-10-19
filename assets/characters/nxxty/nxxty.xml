@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="nxxty.png"><SubTexture name="nxxty idle0000" x="0" y="0" width="817" height="1127" frameX="0" frameY="0" frameWidth="817" frameHeight="1127" />
+<SubTexture name="nxxty idle0001" x="817" y="0" width="817" height="1127" frameX="0" frameY="0" frameWidth="817" frameHeight="1127" />
+<SubTexture name="nxxty idle0002" x="1634" y="0" width="817" height="1127" frameX="0" frameY="0" frameWidth="817" frameHeight="1127" />
+<SubTexture name="nxxty idle0003" x="2451" y="0" width="817" height="1127" frameX="0" frameY="0" frameWidth="817" frameHeight="1127" />
+<SubTexture name="nxxty idle0004" x="0" y="1127" width="817" height="1127" frameX="0" frameY="0" frameWidth="817" frameHeight="1127" />
+<SubTexture name="nxxty idle0005" x="817" y="1127" width="817" height="1127" frameX="0" frameY="0" frameWidth="817" frameHeight="1127" />
+<SubTexture name="nxxty right0000" x="1634" y="1127" width="817" height="1127" frameX="0" frameY="0" frameWidth="817" frameHeight="1127" />
+<SubTexture name="nxxty right0001" x="2451" y="1127" width="817" height="1127" frameX="0" frameY="0" frameWidth="817" frameHeight="1127" />
+<SubTexture name="nxxty right0002" x="0" y="2254" width="817" height="1127" frameX="0" frameY="0" frameWidth="817" frameHeight="1127" />
+<SubTexture name="nxxty left0000" x="817" y="2254" width="817" height="1127" frameX="0" frameY="0" frameWidth="817" frameHeight="1127" />
+<SubTexture name="nxxty left0001" x="1634" y="2254" width="817" height="1127" frameX="0" frameY="0" frameWidth="817" frameHeight="1127" />
+<SubTexture name="nxxty left0002" x="2451" y="2254" width="817" height="1127" frameX="0" frameY="0" frameWidth="817" frameHeight="1127" />
+<SubTexture name="nxxty up0000" x="0" y="3381" width="817" height="1127" frameX="0" frameY="0" frameWidth="817" frameHeight="1127" />
+<SubTexture name="nxxty up0001" x="817" y="3381" width="817" height="1127" frameX="0" frameY="0" frameWidth="817" frameHeight="1127" />
+<SubTexture name="nxxty up0002" x="1634" y="3381" width="817" height="1127" frameX="0" frameY="0" frameWidth="817" frameHeight="1127" />
+<SubTexture name="nxxty down0000" x="2451" y="3381" width="817" height="1127" frameX="0" frameY="0" frameWidth="817" frameHeight="1127" />
+<SubTexture name="nxxty down0001" x="0" y="4508" width="817" height="1127" frameX="0" frameY="0" frameWidth="817" frameHeight="1127" />
+<SubTexture name="nxxty down0002" x="817" y="4508" width="817" height="1127" frameX="0" frameY="0" frameWidth="817" frameHeight="1127" />
+</TextureAtlas>

@@ -71,10 +71,17 @@ class FreeplayMenuState extends MusicBeatState
 	{
 		super.create();
 
+		//lock game shits @NxtVithor
+		if (FlxG.save.data.closed > -1)
+			{
+				Main.switchState(this, new LockState());
+			}
+
+
 		mutex = new Mutex();
 
 		// load week jsons before adding week songs
-		WeekParser.loadJsons(false);
+		//WeekParser.loadJsons(false);
 
 		loadSongs(true);
 
