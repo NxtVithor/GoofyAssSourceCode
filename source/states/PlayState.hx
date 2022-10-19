@@ -1747,6 +1747,7 @@ class PlayState extends MusicBeatState
 		{
 			Conductor.startMusic();
 			Conductor.songMusic.onComplete = endSong.bind();
+			FlxTween.tween(uiHUD.centerMark, {alpha: 1});
 
 			#if DISCORD_RPC
 			// Song duration in a float, useful for the time left feature

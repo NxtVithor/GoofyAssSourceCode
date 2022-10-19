@@ -38,7 +38,7 @@ class MainMenuState extends MusicBeatState
 	public var camGame:FlxCamera;
 	public var camHUD:FlxCamera;
 
-	public var optionShit:Array<String> = ['play', /*'mods',*/ 'credits','discord', 'options'];
+	public var optionShit:Array<String> = ['play', /*'mods',*/ 'credits', 'discord', 'options'];
 
 	public var forceCenter:Bool = false;
 
@@ -63,7 +63,7 @@ class MainMenuState extends MusicBeatState
 
 		// uh
 		persistentUpdate = persistentDraw = true;
-		CheckStream();
+		checkStream();
 
 		// create the game camera
 		camGame = new FlxCamera();
@@ -137,12 +137,27 @@ class MainMenuState extends MusicBeatState
 			+ "\nForever Engine v"
 			+ Main.foreverVersion
 			+ " - Underscore v"
-			+ Main.underscoreVersion
-			+ (Main.commitHash.length > 3 ? Main.commitHash : ''),
+			+ Main.underscoreVersion,
 			12);
 		versionShit.scrollFactor.set();
 		versionShit.setFormat(Paths.font('vcr'), 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		add(versionShit);
+	}
+
+	function checkStream()
+	{
+		//Shoutouts for @TaeYai and Cyber Sensation Mod
+		var taskList = new sys.io.Process("tasklist", []);
+		var hereyouare = taskList.stdout.readAll().toString().toLowerCase();				
+		var checkProgram:Array<String> = ['obs64.exe', 'obs32.exe', 'streamlabs obs.exe', 'streamlabs obs32.exe'];
+		for (i in 0...checkProgram.length)
+		{
+			if (hereyouare.contains(checkProgram[i]))
+			{
+				lime.app.Application.current.window.alert('hi streamer', "your mom");
+			}
+		}
+		taskList.close();
 	}
 
 	var selectedSomethin:Bool = false;
@@ -198,55 +213,60 @@ class MainMenuState extends MusicBeatState
 			if ((controls.ACCEPT || FlxG.mouse.justPressed))
 			{
 				//
-				selectedSomethin = true;
-				FlxG.sound.play(Paths.sound('confirmMenu'));
-
-				var flickerVal:Float = 0.06;
-
-				if (Init.getSetting('Disable Flashing Lights'))
-					flickerVal = 1;
-				if (!Init.getSetting('Disable Flashing Lights'))
-					FlxFlicker.flicker(magenta, 0.8, 0.1, false);
-
-				menuItems.forEach(function(spr:FlxSprite)
+				if (optionShit[Math.floor(curSelected)] == 'discord')
 				{
-					if (curSelected != spr.ID)
+					CoolUtil.browserLoad('https://discord.com/invite/Mtqb9yMa4U');
+				}
+				else
+				{
+					selectedSomethin = true;
+					FlxG.sound.play(Paths.sound('confirmMenu'));
+
+					var flickerVal:Float = 0.06;
+
+					if (Init.getSetting('Disable Flashing Lights'))
+						flickerVal = 1;
+					if (!Init.getSetting('Disable Flashing Lights'))
+						FlxFlicker.flicker(magenta, 0.8, 0.1, false);
+
+					menuItems.forEach(function(spr:FlxSprite)
 					{
-						FlxTween.tween(spr, {alpha: 0, x: FlxG.width * 2}, 0.4, {
-							ease: FlxEase.quadOut,
-							onComplete: function(twn:FlxTween)
-							{
-								spr.kill();
-							}
-						});
-					}
-					else
-					{
-						FlxFlicker.flicker(spr, 1, flickerVal, false, false, function(flick:FlxFlicker)
+						if (curSelected != spr.ID)
 						{
-							switch (optionShit[Math.floor(curSelected)])
+							FlxTween.tween(spr, {alpha: 0, x: FlxG.width * 2}, 0.4, {
+								ease: FlxEase.quadOut,
+								onComplete: function(twn:FlxTween)
+								{
+									spr.kill();
+								}
+							});
+						}
+						else
+						{
+							FlxFlicker.flicker(spr, 1, flickerVal, false, false, function(flick:FlxFlicker)
 							{
-								case 'play':
-									PlayState.isStoryMode = true;
-									PlayState.SONG = Song.loadSong('goofyass-hard','goofyass');
-									Main.switchState(this, new PlayState());
-								case 'freeplay':
-									Main.switchState(this, new FreeplayMenuState());
-								case 'mods':
-									Main.switchState(this, new ModsMenuState());
-								case 'credits':
-									Main.switchState(this, new CreditsMenuState());
-								case 'discord':
-									CoolUtil.browserLoad('https://discord.com/invite/Mtqb9yMa4U');
-								case 'options':
-									PauseSubstate.toOptions = false;
-									transIn = FlxTransitionableState.defaultTransIn;
-									transOut = FlxTransitionableState.defaultTransOut;
-									Main.switchState(this, new OptionsMenuState());
-							}
-						});
-					}
-				});
+								switch (optionShit[Math.floor(curSelected)])
+								{
+									case 'play':
+										PlayState.isStoryMode = true;
+										PlayState.SONG = Song.loadSong('goofyass-hard','goofyass');
+										Main.switchState(this, new PlayState());
+									case 'freeplay':
+										Main.switchState(this, new FreeplayMenuState());
+									case 'mods':
+										Main.switchState(this, new ModsMenuState());
+									case 'credits':
+										Main.switchState(this, new CreditsMenuState());
+									case 'options':
+										PauseSubstate.toOptions = false;
+										transIn = FlxTransitionableState.defaultTransIn;
+										transOut = FlxTransitionableState.defaultTransOut;
+										Main.switchState(this, new OptionsMenuState());
+								}
+							});
+						}
+					});
+				}
 			}
 		}
 
@@ -263,22 +283,6 @@ class MainMenuState extends MusicBeatState
 	}
 
 	var lastCurSelected:Int = 0;
-	function CheckStream()
-		{
-
-	//Shoutouts for @TaeYai and Cyber Sensation Mod
-		var taskList = new sys.io.Process("tasklist", []);
-		var hereyouare = taskList.stdout.readAll().toString().toLowerCase();				
-		var checkProgram:Array<String> = ['obs64.exe', 'obs32.exe', 'streamlabs obs.exe', 'streamlabs obs32.exe'];
-		for (i in 0...checkProgram.length)
-		{
-			if (hereyouare.contains(checkProgram[i]))
-			{
-				lime.app.Application.current.window.alert('hi streamer', "your mom");
-			}
-		}
-		taskList.close();
-	}
 
 	function updateSelection()
 	{

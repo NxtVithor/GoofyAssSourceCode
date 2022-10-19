@@ -17,25 +17,23 @@ import states.PlayState;
 class ClassHUD extends FlxTypedGroup<FlxBasic>
 {
 	// set up variables and stuff here
-	var scoreBar:FlxText;
-	var scoreLast:Float = -1;
+	public var scoreBar:FlxText;
+
 	var scoreColorTween:FlxTween;
 
-	var cornerMark:FlxText; // engine mark at the upper right corner
-	var centerMark:FlxText; // song display name and difficulty at the center
+	public var cornerMark:FlxText; // engine mark at the upper right corner
+	public var centerMark:FlxText; // song display name and difficulty at the center
 
-	var healthBarBG:FlxSprite;
-	var healthBar:FlxBar;
+	public var healthBarBG:FlxSprite;
+	public var healthBar:FlxBar;
 
 	public var iconP1:HealthIcon;
 	public var iconP2:HealthIcon;
 
-	var stupidHealth:Float = 0;
-
 	public var infoDisplay:String = CoolUtil.dashToSpace(PlayState.SONG.song);
 	// public var diffDisplay:String = CoolUtil.difficultyFromString();
 	public var diffDisplay:String = ForeverLocales.curLang.difficultyNames[PlayState.storyDifficulty];
-	public var engineDisplay:String = "UNDERSCORE v" + Main.underscoreVersion + (Main.commitHash.length > 3 ? Main.commitHash : '');
+	public var engineDisplay:String = "UNDERSCORE v" + Main.underscoreVersion;
 
 	public var autoplayMark:FlxText;
 	public var autoplaySine:Float = 0;
@@ -90,16 +88,23 @@ class ClassHUD extends FlxTypedGroup<FlxBasic>
 		cornerMark.setBorderStyle(OUTLINE, FlxColor.BLACK, 2);
 		cornerMark.setPosition(FlxG.width - (cornerMark.width + 5), 5);
 		cornerMark.antialiasing = true;
-		cornerMark.visible = Init.getSetting('Engine Mark');
+		cornerMark.visible = (Init.getSetting('Engine Mark') && !PlayState.bfStrums.autoplay);
 		add(cornerMark);
 
-		centerMark = new FlxText(0, (Init.getSetting('Downscroll') ? FlxG.height - 45 : 20), 0, '- $infoDisplay [$diffDisplay] -');
+		centerMark = new FlxText(0, (Init.getSetting('Downscroll') ? FlxG.height - 45 : 20), 0, '', 24);
 		centerMark.setFormat(Paths.font('vcr'), 24, FlxColor.WHITE);
 		centerMark.setBorderStyle(OUTLINE, FlxColor.BLACK, 2);
 		centerMark.antialiasing = !Init.getSetting('Disable Antialiasing');
 		centerMark.screenCenter(X);
+		if (Init.getSetting('Center Display') != 'Nothing')
+			add(centerMark);
+
+		if (Init.getSetting('Center Display') == 'Song Name')
+			centerMark.text = '- $infoDisplay [$diffDisplay] -';
+		else if (Init.getSetting('Center Display') == 'Song Time')
+			centerMark.alpha = 0;
+
 		centerMark.x = Math.floor((FlxG.width / 2) - (centerMark.width / 2));
-		add(centerMark);
 
 		autoplayMark = new FlxText(-5, (Init.getSetting('Downscroll') ? centerMark.y - 60 : centerMark.y + 60), FlxG.width - 800, '${language.botTxt}\n', 32);
 		autoplayMark.setFormat(Paths.font("vcr"), 32, FlxColor.WHITE, CENTER);
@@ -148,8 +153,8 @@ class ClassHUD extends FlxTypedGroup<FlxBasic>
 		updateBar();
 	}
 
-	var counterTextSize:Int = 18;
-	var counterTextFont:String = 'vcr';
+	public var counterTextSize:Int = 18;
+	public var counterTextFont:String = 'vcr';
 
 	var left = (Init.getSetting('Counter') == 'Left');
 
@@ -174,6 +179,9 @@ class ClassHUD extends FlxTypedGroup<FlxBasic>
 			autoplaySine += 30 * elapsed;
 			autoplayMark.alpha = 1 - Math.sin((Math.PI * autoplaySine) / 80);
 		}
+
+		if (Init.getSetting('Center Display') == 'Song Time')
+			updateTime();
 	}
 
 	private final divider:String = " • ";
@@ -224,6 +232,16 @@ class ClassHUD extends FlxTypedGroup<FlxBasic>
 			healthBar.createFilledBar(0xFFFF0000, 0xFF66FF33);
 		healthBar.scrollFactor.set();
 		healthBar.updateBar();
+	}
+
+	public function updateTime()
+	{
+		var currentTime = flixel.util.FlxStringUtil.formatTime(Math.floor(Conductor.songPosition / 1000), false);
+		var songLength = flixel.util.FlxStringUtil.formatTime(Math.floor((PlayState.songLength) / 1000), false);
+		centerMark.text = '- [$currentTime / $songLength] -';
+
+		// *center* the thing, will you?
+		centerMark.x = Math.floor((FlxG.width / 2) - (centerMark.width / 2));
 	}
 
 	public function beatHit(curBeat:Int)

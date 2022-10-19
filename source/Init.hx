@@ -116,6 +116,13 @@ class Init extends FlxState
 			NOT_FORCED,
 			['never', 'freeplay only', 'always']
 		],
+		'Center Display' => [
+			'Song Name',
+			Selector,
+			'What should we display on the Center Mark Text?',
+			NOT_FORCED,
+			['Song Name', 'Song Time', 'Nothing']
+		],
 		// META;
 		'Auto Pause' => [
 			true,
@@ -227,7 +234,7 @@ class Init extends FlxState
 			100,
 			Selector,
 			"Set the opacity for your notesplashes, usually shown when hit a \"Sick!\" Judgement on Notes.",
-			FORCED
+			NOT_FORCED
 		],
 		"Hold Opacity" => [
 			60,
@@ -290,14 +297,14 @@ class Init extends FlxState
 			'freakyMenu',
 			Selector,
 			'Which song should we use for the Main Menu?',
-			NOT_FORCED,
+			FORCED,
 			''
 		],
 		'Pause Song' => [
 			'breakfast',
 			Selector,
 			'Which song should we use for the Pause Menu?',
-			NOT_FORCED,
+			FORCED,
 			''
 		],
 		'Discord Rich Presence' => [
@@ -390,10 +397,10 @@ class Init extends FlxState
 
         //lock game shits @NxtVithor
 		if (FlxG.save.data.closed > -1)
-			{
-				Sys.exit(0);
-				return;
-			}
+		{
+			Sys.exit(0);
+			return;
+		}
 
 		#if !html5
 		Main.updateFramerate(trueSettings.get("Framerate Cap"));
@@ -462,7 +469,7 @@ class Init extends FlxState
 				case "Arrow Opacity":
 					defaultValue = 80;
 				case "Splash Opacity":
-					defaultValue = 50;
+					defaultValue = 100;
 				case "Hold Opacity":
 					defaultValue = 60;
 			}

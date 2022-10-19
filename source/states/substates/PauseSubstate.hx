@@ -171,8 +171,10 @@ class PauseSubstate extends MusicBeatSubstate
 	{
 		super.update(elapsed);
 
+		/*
 		if (pauseMusic.volume < 0.5)
 			pauseMusic.volume += 0.01 * elapsed;
+		*/
 
 		if (controls.UI_UP_P)
 		{

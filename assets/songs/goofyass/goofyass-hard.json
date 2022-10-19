@@ -3993,7 +3993,7 @@
 		"stage": "too-slow",
 		"validScore": true,
 		"needsVoices": true,
-		"speed": 2.8,
+		"speed": 1.8,
 		"bpm": 115,
 		"assetModifier": "sex"
 	}

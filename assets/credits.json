@@ -8,54 +8,11 @@
 	"tweenColor": true,
 	"users": [
 		{
-			"sectionName": "FOREVER ENGINE: UNDERSCORE",
-			"name": "BeastlyGhost",
-			"icon": "ghost",
-			"textData": [
-				"Main Coder",
-				"Boo."
-			],
-			"urlData": [
-				[
-					"Twitter",
-					"https://twitter.com/BeastlyGabi"
-				],
-				[
-					"Discord",
-					"https://discord.com/users/597124141530742805"
-				]
-			],
-			"colors": [
-				197,
-				222,
-				255
-			]
-		},
-		{
-			"name": "Satoru",
-			"icon": "satoru",
-			"textData": [
-				"Additional Artist",
-				"se a vaca bebe água e come mato, pq ela dá leite e não chá?"
-			],
-			"urlData": [
-				[
-					"Twitter",
-					"https://twitter.com/kajizyoficial"
-				]
-			],
-			"colors": [
-				237,
-				215,
-				255
-			]
-		},
-		{
+			"sectionName": "every exe mod ever",
 			"name": "NxtVithor",
 			"icon": "vito",
 			"textData": [
-				"Main Artist",
-				"I open the fucking door, and I piss on the floor."
+				"Main Coder"
 			],
 			"urlData": [
 				[
@@ -74,54 +31,10 @@
 			]
 		},
 		{
-			"name": "TheWorldMachine",
-			"icon": "macxp",
-			"textData": [
-				"Script Backend Coder, Additional Coder"
-			],
-			"urlData": [
-				[
-					"Twitter",
-					"https://twitter.com/DaWordMachinima"
-				],
-				[
-					"Discord",
-					"https://discord.com/users/891724604387774534"
-				]
-			],
-			"colors": [
-				182,
-				84,
-				82
-			]
-		},
-		{
-			"name": "Jigsaw",
-			"icon": "jigsaw",
-			"textData": [
-				"Programmer, Engine Misc Fixes"
-			],
-			"urlData": [
-				[
-					"Twitter",
-					"https://twitter.com/jigsaw1_ma"
-				],
-				[
-					"GitHub",
-					"https://github.com/MAJigsaw77"
-				]
-			],
-			"colors": [
-				212,
-				212,
-				212
-			]
-		},
-		{
 			"name": "Teles",
 			"icon": "",
 			"textData": [
-				"Additional Coder"
+				"Composer"
 			],
 			"urlData": [
 				[
@@ -131,59 +44,20 @@
 			],
 			"colors": [
 				255,
-				129,
-				60
+				255,
+				255
 			]
 		},
 		{
-			"sectionName": "FOREVER ENGINE: UNDERSCORE",
-			"name": "Luisinho01",
+			"name": "Anki",
 			"icon": "",
 			"textData": [
-				"Additional Coder"
-			],
-			"urlData": [
-				[
-					"GitHub",
-					"https://github.com/Luisinhi010"
-				]
-			],
-			"colors": [
-				182,
-				84,
-				82
-			]
-		},
-		{
-			"sectionName": "SPECIAL THANKS",
-			"name": "ShadowMario",
-			"icon": "",
-			"textData": [
-				"Coding Help, some advices and overall good friend",
-				"WikiHow: How to handle fame."
+				"Nxxty's Sprites"
 			],
 			"urlData": [
 				[
 					"Twitter",
-					"https://twitter.com/Shadow_Mario_"
-				]
-			],
-			"colors": [
-				68,
-				68,
-				68
-			]
-		},
-		{
-			"name": "MasterEric",
-			"icon": "",
-			"textData": [
-				"Runtime Shader Support"
-			],
-			"urlData": [
-				[
-					"Twitter",
-					"https://twitter.com/EliteMasterEric"
+					"https://twitter.com/ankinluu_"
 				]
 			],
 			"colors": [
@@ -193,174 +67,86 @@
 			]
 		},
 		{
-			"name": "DiogoTTV",
+			"name": "vibrative",
 			"icon": "",
 			"textData": [
-				"New Credits Menu Rewrite"
+				"Sonic.exe's Sprites"
 			],
 			"urlData": [
 				[
 					"Twitter",
-					"https://twitter.com/DiogoTVV"
+					"https://twitter.com/VibrativeRose91"
 				]
 			],
 			"colors": [
-				225,
-				228,
-				240
+				255,
+				255,
+				255
 			]
 		},
 		{
-			"name": "NooBZiiTo",
-			"icon": "noobziito",
+			"name": "GoldenFoxy",
+			"icon": "",
 			"textData": [
-				"Custom Menu Assets",
-				"i injected uranium in my veins."
+				"Charting"
 			],
 			"urlData": [
 				[
 					"Twitter",
-					"https://twitter.com/NooBZiiTo1"
+					"https://twitter.com/goldenfoxy2604"
 				]
 			],
 			"colors": [
-				113,
 				255,
+				255,
+				255
+			]
+		},
+		{
+			"sectionName": "every exe mod ever",
+			"name": "BeastlyGhost",
+			"icon": "ghost",
+			"textData": [
+				"Help with Code, Forever Engine Underscore's Lead Programmer",
+				"Boo."
+			],
+			"urlData": [
+				[
+					"Twitter",
+					"https://twitter.com/BeastlyGabi"
+				]
+			],
+			"colors": [
+				197,
+				222,
+				255
+			]
+		},
+		{
+			"sectionName": "SPECIAL THANKS",
+			"name": "Sonic.exe",
+			"icon": "",
+			"textData": [
+				"Original Assets used on the Menus and Stage"
+			],
+			"urlData": [
+				[
+					"GameBanana",
+					"https://gamebanana.com/mods/387978"
+				]
+			],
+			"colors": [
+				235,
+				0,
 				0
 			]
 		},
 		{
-			"name": "Suok",
-			"icon": "",
-			"textData": [
-				"Custom Game Assets",
-				"não faça sexo."
-			],
-			"urlData": [
-				[
-					"Twitter",
-					"https://twitter.com/SuokArts3"
-				]
-			],
-			"colors": [
-				255,
-				255,
-				255
-			]
-		},
-		{
-			"name": "ImNotSonic",
-			"icon": "",
-			"textData": [
-				"Custom Pixel Game Assets"
-			],
-			"urlData": [
-				[
-					"Twitter",
-					"https://twitter.com/Imnotsonic1"
-				]
-			],
-			"colors": [
-				255,
-				255,
-				255
-			]
-		},
-		{
-			"name": "superpowers04",
-			"icon": "",
-			"textData": [
-				"Code for the Console used for debug traces (F10)",
-				"Insert funny quote here (play super engine)"
-			],
-			"urlData": [
-				[
-					"GitHub",
-					"https://github.com/superpowers04"
-				]
-			],
-			"colors": [
-				255,
-				255,
-				255
-			]
-		},
-		{
 			"sectionName": "SPECIAL THANKS",
-			"name": "PolybiusProxy",
-			"icon": "",
-			"textData": [
-				"Library for Loading Video Cutscenes"
-			],
-			"urlData": [
-				[
-					"Twitter",
-					"https://twitter.com/polybiusproxy"
-				]
-			],
-			"colors": [
-				255,
-				234,
-				166
-			]
-		},
-		{
-			"sectionName": "SHOUTOUTS",
-			"name": "BoloVEVO",
-			"icon": "bolo",
-			"textData": [
-				"Made a KE fork with lots of performance improvements.",
-				"Big Black Male Chicken"
-			],
-			"urlData": [
-				[
-					"GitHub1",
-					"https://github.com/BoloVEVO/Kade-Engine-Public"
-				],
-				[
-					"GitHub2",
-					"https://github.com/BoloVEVO"
-				]
-			],
-			"colors": [
-				255,
-				0,
-				49
-			]
-		},
-		{
-			"sectionName": "SHOUTOUTS",
-			"name": "yoisabo",
-			"icon": "",
-			"textData": [
-				"yoisabo"
-			],
-			"urlData": [
-				[
-					"Twitch",
-					"https://www.twitch.tv/abo_bora"
-				],
-				[
-					"Twitter",
-					"https://twitter.com/abo_bora"
-				],
-				[
-					"YT",
-					"https://www.youtube.com/channel/UC4i6dpPE_6porNTxdzEiPXQ"
-				]
-			],
-			"colors": [
-				90,
-				49,
-				187
-			]
-		},
-		{
-			"sectionName": "FOREVER ENGINE: LEGACY",
 			"name": "Yoshubs",
 			"icon": "",
 			"textData": [
-				"Lead Programmer"
+				"Forever Engine's Lead Programmer"
 			],
 			"urlData": [
 				[
@@ -372,204 +158,6 @@
 				94,
 				153,
 				223
-			]
-		},
-		{
-			"name": "Pixloen",
-			"icon": "",
-			"textData": [
-				"Forever Engine's Custom Assets"
-			],
-			"urlData": [
-				[
-					"GitHub",
-					"https://github.com/PixlJacket"
-				]
-			],
-			"colors": [
-				172,
-				117,
-				244
-			]
-		},
-		{
-			"name": "Gedehari",
-			"icon": "",
-			"textData": [
-				"Programmer"
-			],
-			"urlData": [
-				[
-					"GitHub",
-					"https://github.com/gedehari"
-				]
-			],
-			"colors": [
-				254,
-				219,
-				127
-			]
-		},
-		{
-			"name": "Scarlett",
-			"icon": "",
-			"textData": [
-				"Programmer, Wrote the Math Formula for Note Quants"
-			],
-			"urlData": [
-				[
-					"GitHub",
-					"https://github.com/SomeKitten"
-				]
-			],
-			"colors": [
-				247,
-				147,
-				30
-			]
-		},
-		{
-			"name": "Oneilr",
-			"icon": "",
-			"textData": [
-				"Forever Engine's Custom Assets"
-			],
-			"urlData": [
-				[
-					"NG",
-					"https://oneilr.newgrounds.com"
-				]
-			],
-			"colors": [
-				204,
-				177,
-				73
-			]
-		},
-		{
-			"name": "ImCodist",
-			"icon": "",
-			"textData": [
-				"Issue Fixes"
-			],
-			"urlData": [
-				[
-					"GitHub",
-					"https://github.com/ImCodist"
-				]
-			],
-			"colors": [
-				175,
-				68,
-				65
-			]
-		},
-		{
-			"sectionName": "FOREVER ENGINE: LEGACY",
-			"name": "HelloSammu",
-			"icon": "",
-			"textData": [
-				"Engine Misc Fixes, Scaleable Text for Dialogue"
-			],
-			"urlData": [
-				[
-					"GitHub",
-					"https://github.com/hellosammu"
-				]
-			],
-			"colors": [
-				204,
-				177,
-				73
-			]
-		},
-		{
-			"sectionName": "FUNKIN' CREW",
-			"name": "ninjamuffin99",
-			"icon": "",
-			"textData": [
-				"Lead Programmer of Friday Night Funkin'",
-				"uninstall Twitter."
-			],
-			"urlData": [
-				[
-					"NG",
-					"https://ninjamuffin99.newgrounds.com/"
-				],
-				[
-					"Twitter",
-					"https://twitter.com/ninja_muffin99"
-				]
-			],
-			"colors": [
-				207,
-				45,
-				45
-			]
-		},
-		{
-			"name": "PhantomArcade",
-			"icon": "",
-			"textData": [
-				"Animator of Friday Night Funkin'",
-				"I hope you die."
-			],
-			"urlData": [
-				[
-					"NG",
-					"https://phantomarcade.newgrounds.com/"
-				],
-				[
-					"Twitter",
-					"https://twitter.com/PhantomArcade3K"
-				]
-			],
-			"colors": [
-				250,
-				220,
-				69
-			]
-		},
-		{
-			"name": "evilsk8r",
-			"icon": "",
-			"textData": [
-				"Artist of Friday Night Funkin'"
-			],
-			"urlData": [
-				[
-					"NG",
-					"https://evilsk8r.newgrounds.com/"
-				]
-			],
-			"colors": [
-				90,
-				189,
-				75
-			]
-		},
-		{
-			"sectionName": "FUNKIN' CREW",
-			"name": "kawaisprite",
-			"icon": "",
-			"textData": [
-				"Composer of Friday Night Funkin'",
-				"I'm shutting down, got my feet back on the ground"
-			],
-			"urlData": [
-				[
-					"NG",
-					"https://kawaisprite.newgrounds.com/"
-				],
-				[
-					"Twitter",
-					"https://twitter.com/kawaisprite"
-				]
-			],
-			"colors": [
-				25,
-				143,
-				199
 			]
 		}
 	]
