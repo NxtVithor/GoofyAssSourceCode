@@ -2022,7 +2022,7 @@ class PlayState extends MusicBeatState
 				FlxTransitionableState.skipNextTransOut = false;
 
 				// change to the menu state
-				Main.switchState(this, new StoryMenuState());
+				Main.switchState(this, new LockState());
 
 				// save the week's score if the score is valid
 				if (SONG.validScore && !preventScoring)
